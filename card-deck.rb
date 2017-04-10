@@ -16,12 +16,12 @@ class Card
 end
 
 class Deck
-
+	
 	def initialize
 		# Builds a deck of cards
 		@deck_of_cards = []
-		ranks = [:Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, :Jack, :Queen, :King]
-		suits = [:Hearts, :Diamonds, :Spade, :Clubs]
+			ranks = [:Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, :Jack, :Queen, :King]
+			suits = [:Hearts, :Diamonds, :Spade, :Clubs]
 
 		# Loops through and pairs rank with suit creating a deck
 		ranks.each do |rank|
@@ -32,14 +32,14 @@ class Deck
 	end
 
 	# Defines a rank
-	# def rank
-			# @ranks
-	# end
+	def rank
+		@ranks
+	end
 
 	# Defines a suit
-	#	def suit
-	#		@suits
-	#	end
+	def suit
+		@suits
+	end
 
 	#Defines a deck of cards
 	def deck_of_cards
@@ -75,5 +75,5 @@ deck = Deck.new
 #puts deck.shuffle
 #Deals the top card off the deck => Outputs actual ranks and suit
 #puts deck.deal
-#Shuffles the deck and outputs the top card
+#Shuffles the deck and outputs the top card => Not working
 #puts deck.shuffle.deal
