@@ -20,14 +20,14 @@ class Image
 
   def blur
     one_pixel_indices = self.one_coordinates
-    @new_image = @rows.map
-    one_pixel_indices do |row, column|
-      @new_image[row][column - 1] = 1
-      @new_image[row - 1][column] = 1
-      @new_image[row + 1][column] = 1
-      @new_image[row][column + 1] = 1
+    @new_image = Marshal.load( Marshal.dump(@rows) )    
+    one_pixel_indices.each do |row, column|
+      @new_image[row][column - 1] = 1 if column != 0
+      @new_image[row - 1][column] = 1 if column != @new_image[0].length - 1
+      @new_image[row + 1][column] = 1 if row != 0
+      @new_image[row][column + 1] = 1 if row != @new_image.length - 1
     end
-    puts @new_image.each{|new| puts new.join}
+    @new_image.each{|new| puts new.join}
   end
 end  
 
@@ -38,4 +38,6 @@ image = Image.new([
   [0, 0, 0, 0]
   ])
 
-image.blur
+image.output_image
+puts "\n"
+image.blur.new_image_output
