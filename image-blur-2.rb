@@ -40,4 +40,4 @@ image = Image.new([
 
 image.output_image
 puts "\n"
-image.blur.new_image_output
+image.blur
