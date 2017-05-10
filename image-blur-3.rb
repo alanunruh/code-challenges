@@ -65,16 +65,11 @@ class Image
   end
 
   def manhattan_distance(distance)
+    blur
     distance.times do |x|
       find_one_coordinates
       blur
     end
-  end
-
-  def output_manhattan_distance(distance)
-    manhattan_distance
-    output_image
-    puts "done"
   end
 end
 
@@ -85,5 +80,5 @@ image = Image.new([
   [0, 0, 0, 0]
 ])
 
+image.manhattan_distance(3)
 image.output_image
-image.output_manhattan_distance(2)
