@@ -64,21 +64,31 @@ class Image
     end
   end
 
-  def manhattan_distance(distance)
+  def blur!
+    find_one_coordinates
     blur
-    distance.times do |x|
-      find_one_coordinates
-      blur
+  end
+
+  def manhattan_distance(distance)
+    distance.times do
+      blur!
     end
   end
 end
 
 image = Image.new([
-  [0, 0, 0, 0],
-  [0, 1, 0, 0],
-  [0, 0, 0, 1],
-  [0, 0, 0, 0]
+  [1, 0, 0, 0, 0, 0, 0, 1],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 1, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [1, 0, 0, 0, 0, 0, 0, 1]
 ])
 
-image.manhattan_distance(3)
+image.manhattan_distance(2)
 image.output_image
