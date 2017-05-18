@@ -17,7 +17,34 @@ def print_values(list_node)
   end
 end
 
-def reverse_list
+class Stack
+  attr_reader :data
+
+  def initialize
+    @data = nil
+  end
+  # Push a value onto the stack
+  def push(value)
+    # Implement
+  end
+  # Pop an item off the stack
+  # Remove the last item that was pushed onto the stack
+  # and return the value to the user
+  def pop
+    # Return a value
+  end
+end
+
+def reverse_list(list)
+  # Add code here
+
+  while list
+    # Add code here
+    # Within the while loop you can access the value of the
+    # current LinkedListNode by calling list.value
+    list = list.next_node
+  end
+  # Add code here
 end
 
 node1 = LinkedListNode.new(37)
