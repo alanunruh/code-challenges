@@ -23,15 +23,20 @@ class Stack
   def initialize
     @data = nil
   end
-  # Push a value onto the stack
+
   def push(value)
-    # Implement
+    @data = LinkedListNode.new(value, @data)
   end
-  # Pop an item off the stack
-  # Remove the last item that was pushed onto the stack
-  # and return the value to the user
+ 
   def pop
-    # Return a value
+    puts "Stack is empty" if is_empty?
+    value = @data.value
+    @data = @data.next_node
+    return value
+  end
+
+  def is_empty
+    @data.nil?
   end
 end
 
@@ -51,7 +56,13 @@ node1 = LinkedListNode.new(37)
 node2 = LinkedListNode.new(99, node1)
 node3 = LinkedListNode.new(12, node2)
 
+
 print_values(node3)
 puts "-------"
-revlist = reverse_list(node3)
-print_values(revlist)
+
+stack = Stack.new
+
+stack.push(node3)
+#stack.pop
+#revlist = reverse_list(node3)
+#print_values(revlist)
