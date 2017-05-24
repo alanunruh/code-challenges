@@ -29,27 +29,27 @@ class Stack
   end
  
   def pop
-    puts "Stack is empty" if is_empty?
-    value = @data.value
-    @data = @data.next_node
-    return value
+    if bottom_of_stack
+      return "You're at the bottom of the stack"
+    else
+      value = @data.value
+      @data = @data.next_node
+      return value
+    end
   end
 
-  def is_empty
+  def bottom_of_stack
     @data.nil?
   end
 end
 
 def reverse_list(list)
-  # Add code here
+  reversed_stack = Stack.new
+end
 
-  while list
-    # Add code here
-    # Within the while loop you can access the value of the
-    # current LinkedListNode by calling list.value
-    list = list.next_node
-  end
-  # Add code here
+while list != nil
+  reversed_stack.push(list)
+  list = list.next_node
 end
 
 node1 = LinkedListNode.new(37)
@@ -62,7 +62,10 @@ puts "-------"
 
 stack = Stack.new
 
-stack.push(node3)
-#stack.pop
+stack.push(1)
+stack.push(2)
+puts stack.pop
+puts stack.pop
+puts stack.pop
 #revlist = reverse_list(node3)
 #print_values(revlist)
