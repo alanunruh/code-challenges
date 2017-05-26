@@ -51,7 +51,7 @@ def reverse_list(list)
     stack.push(list.value)
     list = list.next_node
   end
-  LinkedListNode.new(stack.pop, stack.data)
+  stack.data
 end
 
 node1 = LinkedListNode.new(37)
