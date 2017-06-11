@@ -17,16 +17,16 @@ def print_values(list_node)
     print "nil\n"
     return
   end
+end
 
-  def reverse_list(list, previous=nil)
-    while list != nil
-      next_node = list.next_node
-      list.next_node = previous
-      previous = list
-      list = next_node
-    end
-    return previous
+def reverse_list(list, previous=nil)
+  while list != nil
+    next_node = list.next_node
+    list.next_node = previous
+    previous = list
+    list = next_node
   end
+  return previous
 end
 
 node1 = LinkedListNode.new(37)
