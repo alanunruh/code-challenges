@@ -29,18 +29,18 @@ class Deck
     end
   end
 
-  def rank
-    @ranks
+  def ranks
+    puts @ranks
     puts "Here are the rank of the cards"
   end
 
   def suits
-    @suits
+    puts @suits
     puts "Here are the suits of the cards"
   end
 
   def cards
-    @cards
+    puts @cards
     puts "Here is the deck of cards"
   end
 
@@ -68,4 +68,4 @@ end
 
 deck = Deck.new
 
-puts deck.shuffle_and_deal
+deck.shuffle_and_deal
