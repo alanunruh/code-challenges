@@ -3,7 +3,7 @@ var readlineSync = require('readline-sync');
 var input = readlineSync.question("How many digits of FooBar shall I produce: ");
 
 for (var iteration = 1; iteration <= Number(input); iteration++) {
-  if (iteration % 3 ===0 && iteration % 5 === 0 ) {
+  if (iteration % 3 === 0 && iteration % 5 === 0 ) {
     console.log("FooBar");
   }
   else if (iteration % 3 === 0) {
