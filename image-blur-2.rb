@@ -1,22 +1,15 @@
 require 'pry'
 class Image
-
   attr_reader :one_pixel_indices
 
   def initialize(data)
     @rows = data
-    find_one_coordinates
-  end
-
-  def output_image
-    @rows.each{|row| puts row.join}
   end
 
   def find_one_coordinates
     @one_pixel_indices = []
     @rows.each_with_index do |row, row_index|
       row.each_with_index do |column, column_index|
-        # binding.pry if column == 1
         if column == 1
           @one_pixel_indices << [column_index, row_index]
         end
@@ -67,6 +60,10 @@ class Image
       blur_below(row, column)
     end
   end
+
+  def output_image
+    @rows.each{|row| puts row.join}
+  end
 end
 
 image = Image.new([
@@ -76,5 +73,10 @@ image = Image.new([
   [0, 0, 0, 0]
 ])
 
+puts "here's the original image:"
+image.output_image
+
+puts "here's the blurred image:"
+image.find_one_coordinates
 image.blur
 image.output_image
