@@ -1,3 +1,5 @@
+// var sneaks the value outside the scope and it displays the value of i is 10 in the console
+
 "use strict";
 
 for(var i = 0; i < 10; i++) {
