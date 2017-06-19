@@ -9,8 +9,8 @@ class Animal {
 }
 
 class Dog extends Animal {
-  By using extends, the Dog class will inherit all methods from the Animal class
+  // By using extends, the Dog class will inherit all methods from the Animal class
 }
 
 const d = new Dog();
-d.eat(;)
+d.eat();
