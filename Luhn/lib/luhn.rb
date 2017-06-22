@@ -5,24 +5,28 @@
 # Step 5 - If the sum is divisible by 10 it's a valid number. Otherwise it's invalid.
 require 'pry'
 
-module Luhn
+class Luhn
 
   def self.is_valid?(credit_card_numbers)
-    @numbers = credit_card_numbers
-    @numbers.each_with_index do |number, index|
-      far_right_value
-        if index % 2 == 0
+    sum = 0
+    individual_numbers = credit_card_numbers.to_s.chars.reverse!
+    individual_numbers.each_with_index do |number, index|
+      if index.even?  #if index % 2 == 0
         number * 2
+        if number <= 10
+            number = number - 9
+        end
       end
+      number.each do |digit|
+        @total_number = sum+=digit
+        if @total_number / 10
+          puts true
+        else
+          puts false
+        end
     end
-  end
-
-  def far_right_value
-    @numbers.size - 1
   end
 end
 
 
-# CC     4  1  9  4  5  6  0 3 8 5 0  0  8  5  0  4
-# left   0  1  2  3  4  5  6 7 8 9 10 11 12 13 14 15
-# right  15 14 13 12 11 10 9 8 7 6 5  4  3  2  1  0 
+luhn = Luhn.new(23456789)
