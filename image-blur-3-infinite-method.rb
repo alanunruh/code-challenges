@@ -29,9 +29,11 @@ def reverse_list(list, previous=nil)
   return previous
 end
 
-def is_list_infinite?(list_node, next_node)
-  if list_node && next_node == nil
-    return false
+def is_list_infinite?(list, previous=nil)
+  unless list || previous == nil # x || y == nil
+    puts false
+  else
+    puts true
   end
 end
 
@@ -43,9 +45,10 @@ print_values(node3)
 puts "-------"
 revlist = reverse_list(node3)
 print_values(revlist)
-is_list_infinite?(node3, node2)
+is_list_infinite?(node2, node1)
 
 # desired output
 # 12 --> 99 --> 37 --> nil
 # ------
 # 37 --> 99 --> 12 --> nil
+# true if infinite / false if not
