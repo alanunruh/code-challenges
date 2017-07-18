@@ -6,27 +6,25 @@
 require 'pry'
 
 class Luhn
-
-  def self.is_valid?(credit_card_numbers)
+  
+  def is_valid?(credit_card_numbers)
+    # Set sum to 0 at the start
     sum = 0
+    # Break the numbers into individual digits and reverse the list
     individual_numbers = credit_card_numbers.to_s.chars.reverse!
+    # Loop through every number_with_index and add the digit to the sum
     individual_numbers.each_with_index do |number, index|
-      if index.even?  #if index % 2 == 0
-        number * 2
-        if number <= 10
-            number = number - 9
-        end
+      # Everyother number starting with the first index
+      if (index % 2 != 0)
+        sum += digit.to_i * 2 >= 10 ? digit.to_i*2-9 : digit.to_i*2
+        sum += digit.to_i 
       end
-      number.each do |digit|
-        @total_number = sum+=digit
-        if @total_number / 10
-          puts true
-        else
-          puts false
-        end
+    end
+ 
+    if (sum % 10) == 0
+      return true
+    else
+      return false
     end
   end
 end
-
-
-luhn = Luhn.new(23456789)
