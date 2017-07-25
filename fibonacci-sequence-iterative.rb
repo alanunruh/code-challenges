@@ -10,4 +10,4 @@ def iterative_fb(n)
   puts number_sequence
 end
 
-iterative_fb(9)
+iterative_fb(35)
