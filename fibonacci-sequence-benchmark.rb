@@ -12,9 +12,12 @@ end
 
 
 def recursive_fb(n)
-  new_number = (n - 1) + (n + 2)
-  return new_number
-  recursive_fb(new_number)
+number_sequence = []
+  if n < 2
+    number_sequence << n
+  else
+    recursive_fb(n - 1) + recursive_fb(n + 2)
+  end
 end
 
 require 'benchmark'
