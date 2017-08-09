@@ -25,4 +25,4 @@ queue.enqueue(6)
 puts queue.dequeue
 puts queue.dequeue
 puts queue.dequeue
-puts queue.dequeuey
+puts queue.dequeue
