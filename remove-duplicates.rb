@@ -11,5 +11,4 @@ def unique(integers)
         @keep << i
       end
     end
-
 end
