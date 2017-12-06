@@ -3,19 +3,13 @@
 
 def findSum(n)
   sum = 0
-
   n.times do 
-    
     if n % 3 == 0 || n % 5 == 0
       sum += n 
     end
-    
     n -= 1 
-    
   end
-  
   return sum
-
 end
 
 findSum(5)
