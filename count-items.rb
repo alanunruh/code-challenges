@@ -1,0 +1,8 @@
+# Create a method count that accepts a list and a block, and returns 
+# the total number of items for which the block returns true.
+
+def count (list, &block)
+  list.count(&block)
+end
+
+list = [0,1,2,3,5,8,13]
